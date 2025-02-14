@@ -1,5 +1,7 @@
 <?php
-namespace Db;
+namespace App\Db;
+
+use PDOException;
 
 class MySQL {
     private static $instance;
@@ -11,11 +13,10 @@ class MySQL {
     private function __wakeup() {}
 
     private function __construct() {
-        $config = require_once('config.php');
         try {
             $this->connection = new \PDO(
-                "mysql:host=".$config['DB_HOST'].";dbname=".$config['DB_NAME'],
-                $config['DB_USER'], $config['DB_PASSWORD']
+                "mysql:host=".$_ENV['DB_HOST'].";dbname=".$_ENV['DB_NAME'],
+                $_ENV['DB_USER'], $_ENV['DB_PASSWORD']
             );
         } catch (PDOException $e) {
             throw $e;

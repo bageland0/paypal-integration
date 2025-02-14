@@ -1,4 +1,5 @@
 <?php
+namespace App;
 
 function redirect($url, $statusCode = 303)
 {

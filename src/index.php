@@ -12,7 +12,7 @@
 </head>
 <body>
   <div class="container">
-      <form method="post" action="actions/order-action.php">
+      <form method="post" action="actions/order-action">
         <fieldset>
             <div>
               <label for="name">Имя: </label>
@@ -20,7 +20,7 @@
             </div>
             <div>
               <label for="email">Email: </label>
-              <input name="email" type="text" required>
+              <input name="email" type="email" required>
             </div>
             <button type="submit">Оплатить</button>
         </fieldset>

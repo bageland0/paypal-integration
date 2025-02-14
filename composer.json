@@ -1,0 +1,19 @@
+{
+    "name": "bageland0/paypal-integration",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "bageland0",
+            "email": "dmitri.6710@gmail.com"
+        }
+    ],
+    "require": {
+        "vlucas/phpdotenv": "^5.5",
+        "phpmailer/phpmailer": "^6.8"``
+    }
+}

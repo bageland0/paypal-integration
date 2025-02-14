@@ -1,6 +1,9 @@
 <?php
-require_once('db/mysql.php');
-use Db\MySQL;
+require_once __DIR__ . '/vendor/autoload.php';
+require_once __DIR__ . '/src/config.php';
+
+use App\Db\MySQL;
+use PDOException;
 
 $instance = MySQL::getInstance();
 $connection = $instance->connection;
@@ -38,8 +41,7 @@ try {
     ");
 } catch (PDOException $e) {
     $connection->rollBack();
-    echo 'Возникла ошибка при миграции';
-    print_r($e);
+    die("Возникла ошибка: " . $e->getMessage());
 }
 
 $connection->commit();
